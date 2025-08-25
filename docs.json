@@ -1,68 +1,149 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Scare Bot",
+  "description": "A powerful, all-in-one Discord bot for your community",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#87CEEB",
+    "light": "#B0E0E6",
+    "dark": "#5F9EA0"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Getting Started",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Introduction",
             "pages": [
               "index",
               "quickstart",
-              "development"
+              "installation"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Setup",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "setup/bot-setup",
+              "setup/permissions",
+              "setup/configuration"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Commands",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Information",
             "pages": [
-              "api-reference/introduction"
+              "commands/information/botinfo",
+              "commands/information/invite",
+              "commands/information/status",
+              "commands/information/credits"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Moderation",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "commands/moderation/ban",
+              "commands/moderation/kick",
+              "commands/moderation/timeout",
+              "commands/moderation/purge"
+            ]
+          },
+          {
+            "group": "Economy",
+            "pages": [
+              "commands/economy/balance",
+              "commands/economy/daily",
+              "commands/economy/work",
+              "commands/economy/shop"
+            ]
+          },
+          {
+            "group": "Fun",
+            "pages": [
+              "commands/fun/8ball",
+              "commands/fun/coinflip",
+              "commands/fun/avatar",
+              "commands/fun/userinfo"
+            ]
+          },
+          {
+            "group": "Music",
+            "pages": [
+              "commands/music/play",
+              "commands/music/queue",
+              "commands/music/skip",
+              "commands/music/stop"
+            ]
+          },
+          {
+            "group": "VoiceMaster",
+            "pages": [
+              "commands/voicemaster/setup",
+              "commands/voicemaster/limit",
+              "commands/voicemaster/lock",
+              "commands/voicemaster/name"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Features",
+        "groups": [
+          {
+            "group": "Core Features",
+            "pages": [
+              "features/automod",
+              "features/logging",
+              "features/welcome",
+              "features/leveling"
+            ]
+          },
+          {
+            "group": "Premium Features",
+            "pages": [
+              "features/premium/overview",
+              "features/premium/videotogif",
+              "features/premium/makemp3"
+            ]
+          },
+          {
+            "group": "Web Dashboard",
+            "pages": [
+              "features/web/overview",
+              "features/web/api",
+              "features/web/status"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Endpoints",
+            "pages": [
+              "api/status",
+              "api/commands",
+              "api/botinfo",
+              "api/guilds"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Development",
+        "groups": [
+          {
+            "group": "Contributing",
+            "pages": [
+              "development/setup",
+              "development/architecture",
+              "development/adding-commands"
             ]
           }
         ]
@@ -71,19 +152,19 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Invite Bot",
+          "href": "https://discord.com/api/oauth2/authorize?client_id=1409354008077926493&permissions=8&scope=bot%20applications.commands",
+          "icon": "discord"
         },
         {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
+          "anchor": "Support Server",
+          "href": "https://discord.gg/scarebot",
+          "icon": "message-circle"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Website",
+          "href": "https://scare.rest",
+          "icon": "globe"
         }
       ]
     }
@@ -96,13 +177,17 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "https://discord.gg/scarebot"
+      },
+      {
+        "label": "Website",
+        "href": "https://scare.rest"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Invite Bot",
+      "href": "https://discord.com/api/oauth2/authorize?client_id=1409354008077926493&permissions=8&scope=bot%20applications.commands"
     }
   },
   "contextual": {
@@ -119,9 +204,9 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "discord": "https://discord.gg/scarebot",
+      "github": "https://github.com/scare-bot",
+      "website": "https://scare.rest"
     }
   }
 }

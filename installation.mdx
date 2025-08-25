@@ -1,0 +1,233 @@
+---
+title: "Installation Guide"
+description: "Complete guide to installing and setting up Scare Bot"
+---
+
+# Installation Guide 📥
+
+This guide will walk you through the complete installation process for Scare Bot, from inviting the bot to your server to configuring all features.
+
+## Prerequisites
+
+Before installing Scare Bot, ensure you have:
+
+- **Discord Server Ownership/Administrator**: You need to be the server owner or have administrator permissions
+- **Discord Account**: A valid Discord account
+- **Web Browser**: Any modern web browser (Chrome, Firefox, Safari, Edge)
+
+## Method 1: Quick Install (Recommended)
+
+### Step 1: Invite the Bot
+
+1. **Click the invite link**:
+   ```
+   https://discord.com/api/oauth2/authorize?client_id=1409354008077926493&permissions=8&scope=bot%20applications.commands
+   ```
+
+2. **Select your server** from the dropdown menu
+
+3. **Review permissions** - The bot requests administrator permissions to access all features
+
+4. **Click "Authorize"** to complete the installation
+
+<Card
+  title="Invite Scare Bot"
+  icon="plus"
+  href="https://discord.com/api/oauth2/authorize?client_id=1409354008077926493&permissions=8&scope=bot%20applications.commands"
+  horizontal
+>
+  Quick install - Add Scare to your server now!
+</Card>
+
+### Step 2: Verify Installation
+
+After inviting the bot, verify the installation:
+
+1. **Check bot status**: The bot should appear online in your server's member list
+2. **Test slash commands**: Type `/` in any channel to see available commands
+3. **Run basic command**: Try `/botinfo` to confirm the bot is working
+
+## Method 2: Custom Permissions Install
+
+If you prefer to customize permissions instead of using administrator:
+
+### Step 1: Create Custom Invite
+
+1. Go to [Discord Developer Portal](https://discord.com/developers/applications)
+2. Create a new application or use an existing one
+3. Go to OAuth2 → URL Generator
+4. Select the following scopes:
+   - `bot`
+   - `applications.commands`
+
+5. Select the following permissions:
+   - **General Permissions**:
+     - Read Messages/View Channels
+     - Send Messages
+     - Use Slash Commands
+     - Embed Links
+     - Attach Files
+     - Read Message History
+     - Add Reactions
+     - Use External Emojis
+     - Use External Stickers
+
+   - **Moderation Permissions**:
+     - Manage Messages
+     - Ban Members
+     - Kick Members
+     - Manage Roles
+     - View Audit Log
+
+   - **Voice Permissions**:
+     - Connect
+     - Speak
+     - Use Voice Activity
+     - Priority Speaker
+     - Manage Channels
+
+6. **Copy the generated URL** and use it to invite the bot
+
+### Step 2: Manual Permission Setup
+
+After inviting with custom permissions, you may need to:
+
+1. **Create bot role**: Ensure the bot has a role with necessary permissions
+2. **Channel permissions**: Set up channel-specific permissions if needed
+3. **Test functionality**: Verify all features work with the custom permissions
+
+## Post-Installation Setup
+
+### 1. Basic Configuration
+
+After successful installation, configure these essential features:
+
+#### AutoMod Setup
+```bash
+/automod setup
+```
+- Configure automatic moderation for invites, links, spam
+- Set up whitelist for trusted users
+- Enable/disable specific filters
+
+#### Logging Setup
+```bash
+/logging setup
+```
+- Create logging channels for moderation events
+- Configure what events to log
+- Set up welcome/leave messages
+
+#### VoiceMaster Setup
+```bash
+/vm setup
+```
+- Create dynamic voice channels
+- Configure channel limits and permissions
+- Set up naming conventions
+
+### 2. Advanced Configuration
+
+#### Economy System
+```bash
+/economy setup
+```
+- Configure currency name and symbols
+- Set up daily rewards and work system
+- Create shop items and prices
+
+#### Music System
+```bash
+/music setup
+```
+- Configure music channels and permissions
+- Set up volume limits and queue management
+- Enable/disable specific music features
+
+#### Welcome System
+```bash
+/welcome setup
+```
+- Create welcome messages and embeds
+- Set up auto-role assignment
+- Configure welcome channel
+
+## Verification Checklist
+
+After installation, verify these items:
+
+- ✅ **Bot appears online** in server member list
+- ✅ **Slash commands work** (type `/` to see available commands)
+- ✅ **Basic commands function** (`/botinfo`, `/invite`, `/status`)
+- ✅ **Permissions are correct** (bot can send messages, manage roles, etc.)
+- ✅ **Features are accessible** (moderation, music, economy, etc.)
+
+## Troubleshooting
+
+### Common Issues
+
+#### Bot Not Responding
+**Symptoms**: Bot appears offline or doesn't respond to commands
+
+**Solutions**:
+1. Check if the bot is online in your server
+2. Verify the bot has proper permissions
+3. Try re-inviting the bot with administrator permissions
+4. Check Discord's status at [status.discord.com](https://status.discord.com)
+
+#### Commands Not Working
+**Symptoms**: Slash commands don't appear or return errors
+
+**Solutions**:
+1. Ensure slash commands are enabled in your server
+2. Check if the bot has "Use Slash Commands" permission
+3. Try refreshing Discord or restarting the Discord client
+4. Wait a few minutes for commands to sync (can take up to 1 hour)
+
+#### Permission Errors
+**Symptoms**: Bot can't perform actions due to permission issues
+
+**Solutions**:
+1. Ensure the bot's role is above the roles it needs to manage
+2. Check channel-specific permissions
+3. Verify the bot has all required permissions
+4. Use `/botinfo` to check bot's current permissions
+
+### Getting Help
+
+If you're still experiencing issues:
+
+1. **Join our Support Server**: [discord.gg/scarebot](https://discord.gg/scarebot)
+2. **Check Documentation**: Review the [Commands](/commands/information/botinfo) section
+3. **Report Bugs**: Use the bug report channel in our support server
+4. **Request Features**: Suggest new features in our community server
+
+## Next Steps
+
+<Card
+  title="Configuration Guide"
+  icon="settings"
+  href="/setup/configuration"
+>
+  Learn how to customize Scare for your specific needs.
+</Card>
+
+<Card
+  title="Command Reference"
+  icon="list"
+  href="/commands/information/botinfo"
+>
+  Explore all available commands and features.
+</Card>
+
+<Card
+  title="Support Server"
+  icon="users"
+  href="https://discord.gg/scarebot"
+>
+  Get help from our community and development team.
+</Card>
+
+---
+
+**Installation Complete!** 🎉 Your Scare Bot is now ready to enhance your Discord server. Explore the documentation to learn about all available features and commands.

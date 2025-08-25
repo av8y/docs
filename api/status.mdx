@@ -1,0 +1,252 @@
+---
+title: "Status API"
+description: "Get real-time bot status and performance metrics"
+---
+
+# Status API 📊
+
+The Status API provides real-time information about Scare Bot's performance, uptime, and system metrics.
+
+## Endpoint
+
+```http
+GET /api/status
+```
+
+## Base URL
+
+```
+http://localhost:1337/api/status
+```
+
+## Description
+
+This endpoint returns comprehensive status information including:
+
+- **Performance Metrics**: Latency, uptime, and response times
+- **Bot Statistics**: Server count, user count, and command usage
+- **System Health**: Memory usage, CPU utilization, and error rates
+- **Real-time Data**: Live updates of bot performance
+
+## Response Format
+
+### Success Response
+
+```json
+{
+  "stats": {
+    "timestamp": "2025-08-25T06:46:26.513816+00:00Z",
+    "guilds": 1,
+    "users": 41,
+    "channels": 10,
+    "shards": 1,
+    "latency": 124,
+    "uptime": "6m 1s",
+    "commands_used": 486,
+    "shard_stats": {
+      "0": {
+        "id": 0,
+        "guilds": 1,
+        "users": 41,
+        "latency": 124,
+        "status": "online"
+      }
+    }
+  }
+}
+```
+
+### Error Response
+
+```json
+{
+  "error": "Failed to fetch status",
+  "status": "error"
+}
+```
+
+## Response Fields
+
+| Field | Type | Description | Example |
+|-------|------|-------------|---------|
+| `stats.timestamp` | string | ISO 8601 timestamp of the request | `"2025-08-25T06:46:26.513816+00:00Z"` |
+| `stats.guilds` | integer | Number of Discord servers the bot is in | `1` |
+| `stats.users` | integer | Total number of users across all servers | `41` |
+| `stats.channels` | integer | Total number of channels across all servers | `10` |
+| `stats.shards` | integer | Number of Discord shards | `1` |
+| `stats.latency` | integer | Bot's latency to Discord API in milliseconds | `124` |
+| `stats.uptime` | string | How long the bot has been running | `"6m 1s"` |
+| `stats.commands_used` | integer | Total number of commands used | `486` |
+| `stats.shard_stats` | object | Detailed information for each shard | See below |
+
+### Shard Statistics
+
+```json
+{
+  "0": {
+    "id": 0,
+    "guilds": 1,
+    "users": 41,
+    "latency": 124,
+    "status": "online"
+  }
+}
+```
+
+| Field | Type | Description | Example |
+|-------|------|-------------|---------|
+| `id` | integer | Shard ID | `0` |
+| `guilds` | integer | Number of guilds on this shard | `1` |
+| `users` | integer | Number of users on this shard | `41` |
+| `latency` | integer | Shard latency in milliseconds | `124` |
+| `status` | string | Shard connection status | `"online"` |
+
+## Status Codes
+
+| Code | Description |
+|------|-------------|
+| `200` | Success - Status data returned |
+| `500` | Internal Server Error |
+| `503` | Service Unavailable |
+
+## Headers
+
+### Request Headers
+```http
+Accept: application/json
+User-Agent: Scare-Bot-API/1.0
+```
+
+### Response Headers
+```http
+Content-Type: application/json
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: Content-Type
+Access-Control-Allow-Methods: GET
+```
+
+## Examples
+
+### cURL Request
+
+```bash
+curl -X GET "http://localhost:1337/api/status" \
+  -H "Accept: application/json"
+```
+
+### JavaScript (Fetch)
+
+```javascript
+const response = await fetch('http://localhost:1337/api/status');
+const data = await response.json();
+
+console.log(`Bot is serving ${data.stats.guilds} servers`);
+console.log(`Latency: ${data.stats.latency}ms`);
+console.log(`Uptime: ${data.stats.uptime}`);
+```
+
+### Python (requests)
+
+```python
+import requests
+
+response = requests.get('http://localhost:1337/api/status')
+data = response.json()
+
+print(f"Bot is serving {data['stats']['guilds']} servers")
+print(f"Latency: {data['stats']['latency']}ms")
+print(f"Uptime: {data['stats']['uptime']}")
+```
+
+### Node.js (axios)
+
+```javascript
+const axios = require('axios');
+
+const response = await axios.get('http://localhost:1337/api/status');
+const data = response.data;
+
+console.log(`Bot is serving ${data.stats.guilds} servers`);
+console.log(`Latency: ${data.stats.latency}ms`);
+console.log(`Uptime: ${data.stats.uptime}`);
+```
+
+## Rate Limiting
+
+- **Requests per minute**: 60
+- **Requests per hour**: 1000
+- **Rate limit headers**: Included in response
+
+## Caching
+
+- **Cache-Control**: `no-cache`
+- **Data freshness**: Real-time (no caching)
+- **Update frequency**: Every request
+
+## Use Cases
+
+### Monitoring Dashboards
+- Real-time bot performance monitoring
+- Uptime tracking and alerting
+- Performance metrics visualization
+
+### Health Checks
+- Automated health monitoring
+- Service availability checks
+- Performance benchmarking
+
+### Analytics
+- Bot usage statistics
+- Server growth tracking
+- Performance trend analysis
+
+## Related Endpoints
+
+<Card
+  title="Bot Info API"
+  icon="info"
+  href="/api/botinfo"
+>
+  Get detailed bot information and statistics
+</Card>
+
+<Card
+  title="Commands API"
+  icon="list"
+  href="/api/commands"
+>
+  Get list of all available commands
+</Card>
+
+<Card
+  title="Guilds API"
+  icon="users"
+  href="/api/guilds"
+>
+  Get information about bot's guilds
+</Card>
+
+## Error Handling
+
+### Common Errors
+
+| Error | Description | Solution |
+|-------|-------------|----------|
+| `ECONNREFUSED` | Bot server is not running | Start the bot server |
+| `ETIMEDOUT` | Request timed out | Check network connection |
+| `500` | Internal server error | Check bot logs |
+
+### Error Response Format
+
+```json
+{
+  "error": "Failed to fetch status",
+  "message": "Bot server is not responding",
+  "status": "error",
+  "timestamp": "2025-08-25T06:46:26.513816+00:00Z"
+}
+```
+
+---
+
+**Need help?** Join our [Support Server](https://discord.gg/scarebot) for API assistance!
