@@ -40,7 +40,7 @@ Once invited, you should see:
 
 - ✅ **Bot appears online** in your server's member list
 - ✅ **Welcome message** from Scare (if configured)
-- ✅ **Slash commands** available when typing `/`
+- ✅ **Prefix commands** available when typing `,`
 
 ## Step 3: Test Basic Commands
 
@@ -48,32 +48,32 @@ Try these commands to verify everything is working:
 
 ### Information Commands
 ```bash
-/botinfo    # View bot statistics and information
-/invite     # Get bot invite links
-/status     # Check Discord service status
+,botinfo    # View bot statistics and information
+,invite     # Get bot invite links
+,status     # Check Discord service status
 ```
 
 ### Fun Commands
 ```bash
-/8ball <question>    # Ask the magic 8-ball
-/coinflip           # Flip a coin
-/avatar [user]      # View user avatars
+,8ball <question>    # Ask the magic 8-ball
+,coinflip           # Flip a coin
+,avatar [user]      # View user avatars
 ```
 
 ## Step 4: Basic Configuration
 
 ### Set Up Logging (Recommended)
 1. Create a `#bot-logs` channel
-2. Use `/logging setup` to configure logging
+2. Use `,logging setup` to configure logging
 3. Choose what events to log (joins, leaves, moderation, etc.)
 
 ### Configure AutoMod (Recommended)
-1. Use `/automod setup` to enable automatic moderation
+1. Use `,automod setup` to enable automatic moderation
 2. Configure filters for invites, links, spam, etc.
 3. Set up whitelist for trusted users
 
 ### Set Up VoiceMaster (Optional)
-1. Use `/vm setup` to create dynamic voice channels
+1. Use `,vm setup` to create dynamic voice channels
 2. Configure channel limits and permissions
 3. Test by joining the created voice channel
 
@@ -87,40 +87,40 @@ Now that Scare is running, explore these popular features:
     icon="gavel"
     href="/commands/moderation/ban"
   >
-    - `/ban` - Ban users
-    - `/kick` - Kick users  
-    - `/timeout` - Timeout users
-    - `/purge` - Delete messages
+    - `,ban` - Ban users
+    - `,kick` - Kick users  
+    - `,timeout` - Timeout users
+    - `,purge` - Delete messages
   </Card>
   <Card
     title="Music"
     icon="headphones"
     href="/commands/music/play"
   >
-    - `/play` - Play music
-    - `/queue` - View queue
-    - `/skip` - Skip track
-    - `/stop` - Stop music
+    - `,play` - Play music
+    - `,queue` - View queue
+    - `,skip` - Skip track
+    - `,stop` - Stop music
   </Card>
   <Card
     title="Economy"
     icon="coins"
     href="/commands/economy/balance"
   >
-    - `/balance` - Check balance
-    - `/daily` - Daily reward
-    - `/work` - Earn money
-    - `/shop` - Buy items
+    - `,balance` - Check balance
+    - `,daily` - Daily reward
+    - `,work` - Earn money
+    - `,shop` - Buy items
   </Card>
   <Card
     title="VoiceMaster"
     icon="mic"
     href="/commands/voicemaster/setup"
   >
-    - `/vm setup` - Setup channels
-    - `/vm limit` - Set limits
-    - `/vm lock` - Lock channels
-    - `/vm name` - Rename channel
+    - `,vm setup` - Setup channels
+    - `,vm limit` - Set limits
+    - `,vm lock` - Lock channels
+    - `,vm name` - Rename channel
   </Card>
 </Columns>
 
@@ -128,12 +128,12 @@ Now that Scare is running, explore these popular features:
 
 ### Bot Not Responding?
 - ✅ Check if the bot is online in your server
-- ✅ Verify you have permission to use slash commands
-- ✅ Try `/botinfo` to test basic functionality
+- ✅ Verify you have permission to use prefix commands
+- ✅ Try `,botinfo` to test basic functionality
 
 ### Commands Not Working?
 - ✅ Ensure the bot has the required permissions
-- ✅ Check if slash commands are enabled in your server
+- ✅ Check if prefix commands are enabled in your server
 - ✅ Try re-inviting the bot with proper permissions
 
 ### Need Help?

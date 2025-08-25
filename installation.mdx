@@ -44,8 +44,8 @@ Before installing Scare Bot, ensure you have:
 After inviting the bot, verify the installation:
 
 1. **Check bot status**: The bot should appear online in your server's member list
-2. **Test slash commands**: Type `/` in any channel to see available commands
-3. **Run basic command**: Try `/botinfo` to confirm the bot is working
+2. **Test prefix commands**: Type `,` in any channel to see available commands
+3. **Run basic command**: Try `,botinfo` to confirm the bot is working
 
 ## Method 2: Custom Permissions Install
 
@@ -104,7 +104,7 @@ After successful installation, configure these essential features:
 
 #### AutoMod Setup
 ```bash
-/automod setup
+,automod setup
 ```
 - Configure automatic moderation for invites, links, spam
 - Set up whitelist for trusted users
@@ -112,7 +112,7 @@ After successful installation, configure these essential features:
 
 #### Logging Setup
 ```bash
-/logging setup
+,logging setup
 ```
 - Create logging channels for moderation events
 - Configure what events to log
@@ -120,7 +120,7 @@ After successful installation, configure these essential features:
 
 #### VoiceMaster Setup
 ```bash
-/vm setup
+,vm setup
 ```
 - Create dynamic voice channels
 - Configure channel limits and permissions
@@ -130,7 +130,7 @@ After successful installation, configure these essential features:
 
 #### Economy System
 ```bash
-/economy setup
+,economy setup
 ```
 - Configure currency name and symbols
 - Set up daily rewards and work system
@@ -138,7 +138,7 @@ After successful installation, configure these essential features:
 
 #### Music System
 ```bash
-/music setup
+,music setup
 ```
 - Configure music channels and permissions
 - Set up volume limits and queue management
@@ -146,7 +146,7 @@ After successful installation, configure these essential features:
 
 #### Welcome System
 ```bash
-/welcome setup
+,welcome setup
 ```
 - Create welcome messages and embeds
 - Set up auto-role assignment
@@ -157,8 +157,8 @@ After successful installation, configure these essential features:
 After installation, verify these items:
 
 - ✅ **Bot appears online** in server member list
-- ✅ **Slash commands work** (type `/` to see available commands)
-- ✅ **Basic commands function** (`/botinfo`, `/invite`, `/status`)
+- ✅ **Prefix commands work** (type `,` to see available commands)
+- ✅ **Basic commands function** (`,botinfo`, `,invite`, `,status`)
 - ✅ **Permissions are correct** (bot can send messages, manage roles, etc.)
 - ✅ **Features are accessible** (moderation, music, economy, etc.)
 
@@ -176,13 +176,13 @@ After installation, verify these items:
 4. Check Discord's status at [status.discord.com](https://status.discord.com)
 
 #### Commands Not Working
-**Symptoms**: Slash commands don't appear or return errors
+**Symptoms**: Prefix commands don't work or return errors
 
 **Solutions**:
-1. Ensure slash commands are enabled in your server
-2. Check if the bot has "Use Slash Commands" permission
+1. Ensure the bot has proper permissions in the channel
+2. Check if the bot can read and send messages
 3. Try refreshing Discord or restarting the Discord client
-4. Wait a few minutes for commands to sync (can take up to 1 hour)
+4. Verify the bot prefix is set to `,`
 
 #### Permission Errors
 **Symptoms**: Bot can't perform actions due to permission issues
@@ -191,7 +191,7 @@ After installation, verify these items:
 1. Ensure the bot's role is above the roles it needs to manage
 2. Check channel-specific permissions
 3. Verify the bot has all required permissions
-4. Use `/botinfo` to check bot's current permissions
+4. Use `,botinfo` to check bot's current permissions
 
 ### Getting Help
 
